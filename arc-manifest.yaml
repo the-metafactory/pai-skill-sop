@@ -1,24 +1,52 @@
-name: SOP
+# arc-manifest.yaml — capability declaration
+# metafactory-skill-sop: the SOP authoring skill — write, audit, and improve
+# Standard Operating Procedures with the 7-layer prompt architecture. Migrated
+# to the strict arc/v1 manifest contract (spec §4.1/§4.2) under the skill-estate
+# migration epic (the-metafactory/arc#316, WS5). Layout and CI mirror the WS5
+# pathfinder, metafactory-soma-skill-handoff. Distribution is repo-first
+# (arc install from the git repo).
+schema: arc/v1
+name: sop
+namespace: "@metafactory"
 version: 1.0.0
 type: skill
-description: "SOP authoring skill — write effective Standard Operating Procedures using the 7-layer prompt architecture"
+tier: custom
+description: "SOP authoring skill — write, audit, and improve Standard Operating Procedures using the 7-layer prompt architecture."
+license: MIT
+
 author:
-  name: metafactory
-  github: the-metafactory
-repository: "the-metafactory/pai-skill-sop"
+  name: Andreas Aastroem
+  github: mellanon
+
+repository: "the-metafactory/metafactory-skill-sop"
 
 provides:
   skill:
-    - trigger: "create sop"
+    - name: Sop
+      path: skill/
+      trigger: "create sop"
     - trigger: "write sop"
     - trigger: "sop template"
     - trigger: "audit sop"
     - trigger: "review sop"
 
+# Capability surface (arc/v1 requires this block with explicit empties).
 capabilities:
   filesystem:
+    # The skill reads existing SOPs and markdown for context, and writes new or
+    # revised SOPs back into the project's SOP directory.
     read:
       - "docs/sops/"
       - "*.md"
     write:
       - "docs/sops/"
+  # The skill contacts no host directly.
+  network: []
+  bash:
+    # The Publish phase commits the authored SOP (git) and announces it; no
+    # privileged operations.
+    allowed: true
+  secrets: []
+
+bundle:
+  exclude: [.git, node_modules]

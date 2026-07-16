@@ -1,11 +1,11 @@
-# pai-skill-sop
+# metafactory-skill-sop
 
-SOP authoring skill for PAI agents. Teaches agents how to write, audit, and improve Standard Operating Procedures using principles from the [Claude Code prompt playbook](https://github.com/kropdx/unofficial-claude-code-prompt-playbook).
+SOP authoring skill for metafactory agents. Teaches agents how to write, audit, and improve Standard Operating Procedures using principles from the [Claude Code prompt playbook](https://github.com/kropdx/unofficial-claude-code-prompt-playbook).
 
 ## Install
 
 ```bash
-arc install the-metafactory/pai-skill-sop
+arc install the-metafactory/metafactory-skill-sop
 ```
 
 ## What It Does

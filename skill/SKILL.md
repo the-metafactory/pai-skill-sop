@@ -1,3 +1,8 @@
+---
+name: Sop
+description: Write, audit, and improve Standard Operating Procedures (SOPs) that reliably guide both human and AI agents. Applies the 7-layer prompt architecture — procedures over abstractions, motivation with directives, measurable constraints, anti-rationalization rules, first-class verification, layered trust, and constraint repetition. USE WHEN create an SOP, write an SOP, draft a procedure, audit SOPs, review SOPs, improve SOPs, or ask for an SOP template.
+---
+
 # SOP Authoring Skill
 
 > Create, audit, and improve Standard Operating Procedures (SOPs) that reliably guide both human and AI agents.
